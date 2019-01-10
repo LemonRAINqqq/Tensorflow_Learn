@@ -64,6 +64,10 @@ conclusion:
                                train（model.fit)--   
                                评估（model.evaluate)--
     
+    tf.keras.losses.
+    tf.keras.metrics.
+    
+'''                                 
     
     
     

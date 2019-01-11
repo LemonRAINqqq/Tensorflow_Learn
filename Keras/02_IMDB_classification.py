@@ -116,3 +116,11 @@ plt.ylabel('Accuracy')
 plt.legend()
 
 plt.show()
+
+
+'''
+conclusion:
+    验证集(Cross Validation set)：
+        作用是当通过训练集训练出多个模型后，为了能找出效果最佳的模型，使用各个模型对验证集数据进行预测，并记录模型准确率。
+        选出效果最佳的模型所对应的参数，即用来调整模型参数。
+'''

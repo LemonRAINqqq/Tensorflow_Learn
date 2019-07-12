@@ -46,6 +46,11 @@ class NeuralNet(tfe.Network):
     def __init__(self):
         # Define each layer
         super(NeuralNet, self).__init__()
+        '''
+        在大多数情况下tf.keras.Model应该替代tfe.Network，
+        但请注意track_layer不再需要或支持。
+        由于输出track_layer通常仍然分配给属性，因此只需删除track_layer调用即可移植大多数代码。
+        '''
 #        # Hidden fully connected layer with 256 neurons
 #        self.layer1 = self.track_layer(
 #            tf.layers.Dense(n_hidden_1, activation=tf.nn.relu))
@@ -57,6 +62,8 @@ class NeuralNet(tfe.Network):
         self.dense1 = tf.keras.layers.Dense(units=n_hidden_1)
         self.dense2 = tf.keras.layers.Dense(n_hidden_2, activation=tf.nn.relu)
         self.out_layer = tf.keras.layers.Dense(num_classes)
+    
+    #模型的正向传递call
     def call(self, x):
         x = self.dense1(x)
         x = self.dense2(x)
